@@ -1,0 +1,37 @@
+---
+import { Icon } from 'astro-icon'
+
+const mobileNavPosition = '-400px'
+---
+
+<div>
+  <label class="md:hidden cursor-pointer" id="label">
+    <input class="peer hidden" id="input" type="checkbox" />
+    <Icon name='hamburger' class='w-8 stroke-clr-n1 peer-checked:hidden'/>
+    <Icon name='x' class='hidden peer-checked:contents w-8 fill-clr-n1'/>
+  </label>
+
+  <div class='rounded-lg top-[-400px] sm:AbsoluteCenter sm:w-2/3 sm:py-16 sm:text-24 
+  text-clr-n2  sm:bg-black/90'
+    id="childContainer"
+  >
+    <slot />
+  </div>
+</div>
+
+<style>
+  @media (max-width: 650px) {
+    #label:has(#input:checked) {
+      position: absolute;
+      cursor: default;
+      inset: 0;
+      height: 100vmax;
+    }
+
+    #label:has(#input:checked) + #childContainer {
+      top: 150px;
+      transition: top 0.2s ease-out;
+      box-shadow: 0 0 100vmax 100vmax rgb(0, 0, 0, 0.7);
+    }
+  }
+</style>

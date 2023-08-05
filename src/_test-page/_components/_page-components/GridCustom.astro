@@ -1,0 +1,56 @@
+---
+
+---
+
+<section class="grid gap-8 p-8">
+  <div class='bg-slate-500 p-8' style={{gridArea: 'one'}}>  
+    <p>Text</p> 
+  </div>
+  <div class='bg-slate-500 p-8' style={{gridArea: 'two'}} >
+    <p>Text</p> 
+  </div>
+  <div class='bg-slate-500 p-8' style={{gridArea: 'three'}}>
+    <p>Text</p> 
+  </div>
+  <div class='bg-slate-500 p-8' style={{gridArea: 'four'}}>
+    <p>Text</p> 
+  </div>
+  <div class='bg-slate-500 p-8' style={{gridArea: 'five'}}>
+    <p>Text</p> 
+  </div>
+  <div class='bg-slate-500 p-8' style={{gridArea: 'six'}}>
+    <p>Text</p> 
+  </div>
+</section>
+
+
+
+<style>
+
+  section {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      'one one'
+      'two three'
+      'four four'
+      'five five'
+      'six six';
+  }
+  @media (min-width: 650px) {
+    section {
+      grid-template-columns: 2fr 1fr 1fr ;
+      grid-template-areas: 'one two three'
+                              'one four four'
+                              'five six six';
+    }
+  }
+
+  @media (min-width: 1000px) {
+    section {
+      grid-template-columns: 2fr 1fr 1fr 2fr;
+      grid-template-areas:'one two three four'
+                          'one five five six';
+    }
+  }
+
+</style>

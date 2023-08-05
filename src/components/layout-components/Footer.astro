@@ -1,0 +1,24 @@
+---
+import { Icon } from 'astro-icon'
+import FooterNav from 'layout-components/FooterNav.astro'
+import NavToggle from "layout-components/NavToggle.astro";
+import NavSocial from './NavSocial.astro';
+---
+
+<footer class="DefaultMargins bg-clr-n4 py-4 ">
+  <div class="FlexBetween MaxCenter">
+    
+    <a href="/">
+      <Icon class='w-48 stroke-clr-n1 fill-clr-n1' 
+        name='logoGreske' />
+    </a>
+
+    <NavSocial/>
+
+    <NavToggle >
+      <FooterNav />
+    </NavToggle>
+
+    
+  </div>
+</footer>

@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components { 
+/* position */
+  .AbsoluteCenter {@apply absolute left-1/2 -translate-x-1/2}
+  .AbsoluteFull {@apply absolute w-full}
+  .FixedFull {@apply fixed w-full}
+
+/* layout */
+  .FlexBetween {@apply flex justify-between items-center}
+  .FlexCenter {@apply flex justify-center items-center}
+  .GridBasic {@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3}
+  
+/* spacing */
+  .DefaultMargins {@apply px-sm md:px-md lg:px-lg}
+  .MaxCenter {@apply max-w-maxx m-auto}
+
+
+}

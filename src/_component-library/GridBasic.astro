@@ -1,0 +1,20 @@
+---
+const array = [
+  { prop1:'Title', prop2:'Body', prop3:'Link'},
+  { prop1:'Title', prop2:'Body', prop3:'Link'},
+  { prop1:'Title', prop2:'Body', prop3:'Link'},
+  { prop1:'Title', prop2:'Body', prop3:'Link'},
+  { prop1:'Title', prop2:'Body', prop3:'Link'},
+  { prop1:'Title', prop2:'Body', prop3:'Link'},
+  ]
+---
+
+<div class='GridBasic gap-4'>
+  {array.map( (current) => (
+    <div class='FlexCenter bg-clr-3 py-8 px-4'>
+      <h2>{current.prop1}</h2>
+      <p>{current.prop2}</p>
+      <a href="#">{current.prop3}</a>
+    </div>
+  ))}
+</div>

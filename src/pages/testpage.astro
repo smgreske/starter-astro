@@ -1,0 +1,52 @@
+---
+import { Icon } from 'astro-icon'
+
+import GridComplex from '_test-page/_components/_page-components/GridCustom.astro';
+import TestPicture from '_test-page/_components/_image-components/PicTest.astro';
+import Layout from 'src/MainLayout.astro';
+import TestImage from '_test-page/_components/_image-components/ImgTest.astro';
+import GridBasic from '_test-page/_components/_page-components/GridBasic.astro';
+---
+
+<Layout title="Test Page">
+  <main class='DefaultMargins MacCenter pt-32'>
+
+    <label class='accent-green-500'>
+      <input type="checkbox">
+    </label>
+
+    <h1 class='font-secondary font-bold text-32 text-clr'>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <p>Paragraph</p>
+    <a href="#">Anchor</a>
+                
+    <section class='DefaultMargins'>
+      <div class='max-w-[1100px] m-auto'>
+        <h1 class='text-40 font-bold text-center'>Hello</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga corrupti, voluptatibus, a aperiam consequuntur quidem id corporis voluptate suscipit, quae tenetur fugit unde. Id sed temporibus eum hic modi pariatur magnam sunt quas asperiores aspernatur ullam eos mollitia iste quo nobis unde quod sapiente sit, impedit, aliquam distinctio cumque autem.</p>      
+        <TestPicture/>
+      </div>
+    </section>
+    <div class="md:grid grid-cols-2 p-4 bg-slate-500 gap-4 my-8">
+    
+      <TestImage/>
+
+    <div id='scroll-test' class="FlexCenter flex-col p-10 bg-white ">
+      <h2>Header</h2>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. A
+        pariatur, iusto ipsa necessitatibus facilis molestiae impedit
+        at ipsum sed nihil.
+      </p>
+      </div>
+    </div>
+
+    <GridComplex/>
+    <GridBasic/>
+
+  </main>
+</Layout>
