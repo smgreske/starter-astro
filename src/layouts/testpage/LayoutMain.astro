@@ -1,17 +1,17 @@
 ---
 import 'src/global.css'
-import Header from "layout-components/Header.astro";
-import Footer from "layout-components/Footer.astro";
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
 
 interface Props {
-  title: string;
+  pageTitle: string;
 }
 
-const { title } = Astro.props;
+const { pageTitle } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html class='scroll-smooth' lang="en">
+<html data-project='testpage' class='scroll-smooth' lang="en">
   
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,12 +22,12 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{pageTitle}</title>
   </head>
 
-  <body class="font-primary bg-clr-n2 text-clr-n4">
+  <body class="font-primary bg-clr-n2 text-clr-n4 ">
     <Header/>
-    <slot />
+      <slot />       
     <Footer/>
   </body>
 

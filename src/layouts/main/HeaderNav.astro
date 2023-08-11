@@ -1,0 +1,25 @@
+---
+import { Icon } from 'astro-icon'
+
+const linkArray = [
+  { name: "About", path: "/" },
+  { name: "Blog", path: "/blog" }, 
+];
+---
+
+<nav class="flex items-center gap-9 sm:flex-col sm:gap-16">
+
+  {linkArray.map((current) => (
+    <a href={current.path} class="text-clr-n2 hover:text-clr-1"  >
+      {current.name}
+    </a>
+  ))}
+
+  <a class='flex items-center gap-2 border px-2 py-1 transition-all hover:bg-white/30 hover:fill-clr-bg '  href="/">
+    Contact
+    <Icon class='w-5'
+      name='pencilPaper' />
+  </a>
+
+</nav>
+

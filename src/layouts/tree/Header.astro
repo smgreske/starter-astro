@@ -1,0 +1,20 @@
+---
+import { Icon } from 'astro-icon'
+import HeaderNav from './HeaderNav.astro';
+import NavToggle from './NavToggle.astro';
+---
+
+<header class='DefaultMargins AbsoluteFull | bg-black/60 py-4'>
+  <div class='MaxCenter FlexBetween | '>
+
+    <a href='/'>
+      <Icon class='w-48 stroke-clr-n1 fill-clr-n1' 
+        name='logoGreske' />
+    </a>
+
+    <NavToggle >
+      <HeaderNav />
+    </NavToggle>
+
+  </div>
+</header>

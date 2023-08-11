@@ -1,0 +1,17 @@
+---
+const linkArray = [
+  { name: "About", path: "/" },
+  { name: "Services", path: "/" },
+];
+---
+
+<nav class="flex items-center gap-9 sm:flex-col sm:gap-16">
+
+  {linkArray.map((current) => (
+    <a href={current.path} class="text-clr-n2 hover:text-clr-n1"  >
+      {current.name}
+    </a>
+  ))}
+
+</nav>
+

@@ -1,15 +1,23 @@
 ---
-import { Icon } from 'astro-icon'
-
-import GridComplex from '_test-page/_components/_page-components/GridCustom.astro';
-import TestPicture from '_test-page/_components/_image-components/PicTest.astro';
-import Layout from 'src/MainLayout.astro';
-import TestImage from '_test-page/_components/_image-components/ImgTest.astro';
-import GridBasic from '_test-page/_components/_page-components/GridBasic.astro';
+import GridComplex from 'components/testpage/GridCustom.astro';
+import TestPicture from 'components/testpage/PicTest.astro';
+import LayoutMain from 'layouts/testpage/LayoutMain.astro';
+import TestImage from 'components/testpage/ImgTest.astro';
+import GridBasic from 'components/testpage/GridBasic.astro';
 ---
 
-<Layout title="Test Page">
-  <main class='DefaultMargins MacCenter pt-32'>
+<LayoutMain pageTitle="Test Page">
+  <main class='DefaultMargins MaxCenter pt-32'>
+
+    <form action="">
+      <label >
+        Input
+        <input type="text"  minlength='6' required>
+        <p class='peer-invalid:opacity-50' >Must be at least 5 characters</p>
+      </label>
+      <button>Submit</button>
+
+    </form>
 
     <label class='accent-green-500'>
       <input type="checkbox">
@@ -49,4 +57,4 @@ import GridBasic from '_test-page/_components/_page-components/GridBasic.astro';
     <GridBasic/>
 
   </main>
-</Layout>
+</LayoutMain>

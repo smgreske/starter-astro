@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+
+import LayoutMain from 'layouts/tree/LayoutMain.astro';
+import img from 'assets/tree5.jpg'
+---
+
+<LayoutMain pageTitle="Home Page">
+  <main>      
+    <Image class='h-[700px] w-full overflow-hidden object-cover object-top' 
+      src={img} alt="arborists climbing trees"/>
+
+    <section class='DefaultMargins'>
+      <div class='MaxCenter'>
+        <h1 class='text-40 font-bold text-center'>Hello</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga corrupti, voluptatibus, a aperiam consequuntur quidem id corporis voluptate suscipit, quae tenetur fugit unde. Id sed temporibus eum hic modi pariatur magnam sunt quas asperiores aspernatur ullam eos mollitia iste quo nobis unde quod sapiente sit, impedit, aliquam distinctio cumque autem.</p>      
+      </div>
+    </section>
+  </main>
+</LayoutMain>

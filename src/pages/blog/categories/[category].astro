@@ -1,0 +1,34 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content';
+import LayoutMain from 'layouts/main/LayoutMain.astro'
+import { getUniqueTags } from 'src/functions'
+
+
+export const getStaticPaths = async () => {
+  const allPosts = await getCollection('posts')
+  const uniqueTags = getUniqueTags(allPosts)
+  const pageArray: object[] = []
+
+  uniqueTags.forEach( (currentTag) => {
+    const filteredPosts = allPosts.filter( (currentPost) => currentPost.data.tags.includes(currentTag))
+
+    pageArray.push({
+      params: { category: currentTag },
+      props: {
+        pageTitle: currentTag,
+        posts: filteredPosts},
+    })
+  })
+  
+  return pageArray
+}
+
+const { pageTitle, posts } = Astro.props
+---
+
+<LayoutMain {pageTitle}>
+  <h1>Category: {pageTitle}</h1>
+  {posts.map( (current: CollectionEntry<'posts'>) => 
+    <a class='block' href={`/blog/${current.slug}`}>{current.data.title}</a>)}
+</LayoutMain>
+

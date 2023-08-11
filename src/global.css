@@ -2,6 +2,326 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+
+  /* Main --------------------- */
+
+  html[data-project='main'] {
+    --breakpointTablet: 650px;
+    --breakpointDesktop: 1000px;
+
+    --marginMobile: 1rem;
+    --marginTablet: 2rem;
+    --marginDesktop: 4rem;
+
+    --maxWidth: 1110px;
+  }
+
+  html[data-theme='dark'] {
+    --clrDefault: #f3f4f6;
+    --clrBackground: #172554;
+    --clr1: #ea580c;
+    --clr3: #1e3a8a;
+    --clr4: XXXXX;
+    --clr5: XXXXX;
+    --clr6: XXXXX;
+    --clr7: XXXXX;
+  }
+
+  html[data-theme='light'] {
+    --clrDefault: black;
+    --clrBackground: white;
+    --clr1: blue;
+    --clr2: XXXXX;
+    --clr3: XXXXX;
+    --clr4: XXXXX;
+    --clr5: XXXXX;
+    --clr6: XXXXX;
+    --clr7: XXXXX;
+  }
+
+  /* Tree --------------------- */
+
+  html[data-project='tree'] {
+    --marginMobile: 1rem;
+    --marginTablet: 2rem;
+    --marginDesktop: 4rem;
+
+    --maxWidth: 1110px;    
+  }
+
+   /* Test Page --------------------- */
+
+  html[data-project='testpage'] {
+    --marginMobile: 1rem;
+    --marginTablet: 2rem;
+    --marginDesktop: 4rem;
+
+    --maxWidth: 1110px;    
+  }
+
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: theme('borderColor.DEFAULT', currentColor);
+  }
+
+  ::before,
+  ::after {
+    --tw-content: '';
+  }
+  /*
+  1. Use a consistent sensible line-height in all browsers.
+  2. Prevent adjustments of font size after orientation changes in iOS.
+  3. Use a more readable tab size.
+  4. Use the user's configured `sans` font-family by default.
+  5. Use the user's configured `sans` font-feature-settings by default.
+  6. Use the user's configured `sans` font-variation-settings by default.
+  */
+  html {
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -moz-tab-size: 4; /* 3 */
+    tab-size: 4; /* 3 */
+    font-family: theme('fontFamily.sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"); /* 4 */
+    /* font-feature-settings: theme('fontFamily.sans[1].fontFeatureSettings', normal); 
+    font-variation-settings: theme('fontFamily.sans[1].fontVariationSettings', normal);  */
+  }
+
+  body {
+    @apply bg-clr-bg text-clr-default font-primary;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  hr {
+    height: 0; /* Add the correct height in Firefox. */
+    color: inherit; /* Correct the inheritance of border color in Firefox. */
+    border-top-width: 1px; /* Ensure horizontal rules are visible by default. */
+  }
+
+  abbr:where([title]) {
+    text-decoration: underline dotted; /* Add the correct text decoration in Chrome, Edge, and Safari. */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-center;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  b,
+  strong {
+    font-weight: bolder; /* Add the correct font weight in Edge and Safari. */
+  }
+
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: theme('fontFamily.mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace); /* Use the user's configured `mono` font family by default. */
+    font-size: 1em; /* Correct the odd `em` font sizing in all browsers. */
+  }
+
+  small {
+    font-size: 80%; /* Add the correct text decoration in Chrome, Edge, and Safari. */
+  }
+
+  /*
+  Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+  */
+
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  sup {
+    top: -0.5em;
+  }
+
+  /*
+  1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+  2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+  3. Remove gaps between table borders by default.
+  */
+
+
+
+  /*
+  1. Change the font styles in all browsers.
+  2. Remove the margin in Firefox and Safari.
+  3. Remove default padding in all browsers.
+  */
+
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: inherit; /* Change the font styles in all browsers. */
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    margin: 0; /* Remove the margin in Firefox and Safari. */
+    padding: 0; /* Remove default padding in all browsers. */
+  }
+
+  button,
+  select {
+    text-transform: none;   /* Remove the inheritance of text transform in Edge and Firefox. */
+
+  }
+
+  button,
+  [type='button'],
+  [type='reset'],
+  [type='submit'] {
+    -webkit-appearance: button; /* 1. Correct the inability to style clickable types in iOS and Safari. */
+    background-color: transparent; /* Remove default button styles.*/
+    background-image: none; 
+  }
+
+  :-moz-focusring {
+  /* Use the modern Firefox focus style for all focusable elements. */
+    outline: auto; 
+  }
+
+  :-moz-ui-invalid {
+    box-shadow: none;   /* Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737) */
+  }
+
+  progress {
+    vertical-align: baseline;   /* Add the correct vertical alignment in Chrome and Firefox. */
+  }
+
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
+    height: auto;   /* Correct the cursor style of increment and decrement buttons in Safari. */
+
+  }
+
+  [type='search'] {
+    -webkit-appearance: textfield;   /* 1. Correct the odd appearance in Chrome and Safari. */
+    outline-offset: -2px; /* Correct the outline style in Safari. */
+  }
+
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;   /* Remove the inner padding in Chrome and Safari on macOS. */
+  }
+
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button;   /* 1. Correct the inability to style clickable types in iOS and Safari. */
+    font: inherit;   /* 2. Change font properties to `inherit` in Safari. */
+  }
+
+  summary {
+    display: list-item;   /* Add the correct display in Chrome and Safari. */
+  }
+
+  
+  dl,
+  dd,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hr,
+  figure,
+  p,
+  pre {
+    margin: 0;
+  }
+
+  fieldset {
+    margin: 0;
+    padding: 0;
+  }
+
+  legend {
+    padding: 0;
+  }
+
+  dialog {
+    padding: 0;   /* Reset default styling for dialogs. */
+
+  }
+
+  textarea {
+    resize: vertical;   /* Prevent resizing textareas horizontally by default. */
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    opacity: 1; /*  Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300) */
+    color: theme('colors.gray.400', #9ca3af); /* Set the default placeholder color to the user's configured gray 400 color. */
+  }
+
+  button,
+  [role="button"] {
+    cursor: pointer;   /* Set the default cursor for buttons. */
+  }
+
+  :disabled {
+    cursor: default;   /* Make sure disabled buttons don't get the pointer cursor. */
+  }
+
+  /*
+  1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+  2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+    This can trigger a poorly considered lint error in some tools but is included by design.
+  */
+
+  img,
+  svg,
+  video,
+  canvas,
+  audio,
+  iframe,
+  embed,
+  object {
+    display: block; /*  Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14) */
+    vertical-align: middle; /*  Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210) This can trigger a poorly considered lint error in some tools but is included by design. */
+  }
+
+  img,
+  video {
+    max-width: 100%;   /* Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14) */
+    height: auto;
+  }
+
+  [hidden] {
+    display: none; /* Make elements with the HTML hidden attribute stay hidden by default */
+  }
+
+  svg {
+    @apply fill-clr-default
+  }
+
+}
+
 @layer components { 
 /* position */
   .AbsoluteCenter {@apply absolute left-1/2 -translate-x-1/2}
@@ -14,8 +334,12 @@
   .GridBasic {@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3}
   
 /* spacing */
-  .DefaultMargins {@apply px-sm md:px-md lg:px-lg}
+  .DefaultMargins {@apply px-mobile md:px-tablet lg:px-desktop}
   .MaxCenter {@apply max-w-maxx m-auto}
+
+/* components */
+  .CardOne {@apply bg-black/50 text-clr-2 w-fit m-auto rounded-lg shadow-xl border-t-1 border-t-clr-1 border-l-1 border-l-clr-1}
 
 
 }
+

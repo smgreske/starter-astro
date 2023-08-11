@@ -1,0 +1,15 @@
+---
+import { getCollection } from 'astro:content';
+import LayoutMain from "layouts/main/LayoutMain.astro";
+import { getUniqueTags } from "src/functions";
+
+const allPosts = await getCollection('posts')
+const uniqueTags = getUniqueTags(allPosts)
+---
+
+<LayoutMain pageTitle='Categories'>
+  <div class='flex gap-4'>
+    {uniqueTags.map( (current) => 
+      <a href={`/blog/categories/${current}`}>{current}</a> )}
+  </div>
+</LayoutMain>

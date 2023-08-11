@@ -1,0 +1,18 @@
+---
+import MainLayout from "layouts/main/LayoutMain.astro";
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts')
+---
+
+<MainLayout pageTitle={'Blog Page'}>
+  <a class='CardOne block py-12 px-4 rounded-full absolute -translate-y-8 right-10' href="/blog/categories">Categories</a>
+  <h1 class='mb-12'>My Blog</h2>
+    <div class='flex flex-col gap-8'>
+      {allPosts.map( (current) => 
+        <a class='CardOne w-1/2 py-8 rounded-full' href={`/blog/${current.slug}`}>
+          <h2>{current.data.title}</h2> 
+        </a> 
+      )}
+    </div>
+</MainLayout>
