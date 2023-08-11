@@ -1,8 +1,11 @@
 ---
 import 'src/global.css'
-import Header from "./Header.astro"
-import Footer from "./Footer.astro"
-import Main from './Main.astro'
+import NavFooter from './NavFooter.astro'
+import NavToggle from "./NavToggle.astro";
+import NavSocial from './NavSocial.astro';
+import NavHeader from './NavHeader.astro';
+import LogoHeader from './LogoHeader.astro';
+import LogoFooter from './LogoFooter.astro';
 
 interface Props {
   pageTitle: string;
@@ -26,12 +29,33 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle}</title>
   </head>
 
-  <body class='bg-gradient-to-l from-clr-bg to-clr-3 from-70%'>
-    <Header/>
-    <Main>
-      <slot />       
-    </Main>
-    <Footer/>
+  <body class='GradientOne'>
+
+    <header class='DefaultMargins | bg-black/50 py-8 shadow-lg'>
+      <div class='MaxCenter FlexBetween'> 
+        <LogoHeader/>
+        <NavToggle >
+          <NavHeader />
+        </NavToggle> 
+      </div>
+    </header>
+
+    <main class="DefaultMargins py-20">
+      <div class= 'MaxCenter relative'>
+        <slot/>
+      </div>
+    </main>
+
+    <footer class="DefaultMargins bg-black/50 py-4 ">
+      <div class="FlexBetween MaxCenter">
+        <LogoFooter/>
+        <NavSocial/>
+        <NavToggle >
+          <NavFooter />
+        </NavToggle>   
+      </div>
+    </footer>
+
   </body>
 
 </html>
