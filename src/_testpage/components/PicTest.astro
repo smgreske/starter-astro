@@ -1,0 +1,18 @@
+<!-- ---
+import { Image } from "astro:assets";
+import { breakpoints } from "src/variables";
+
+import imgM from "components/testpage/images/image-mobile.jpg";
+import imgT from "components/testpage/images/image-tablet.jpg";
+import imgD from "components/testpage/images/image-desktop.jpg";
+---
+
+<picture>
+  <source srcset={imgD} media={`(min-width: ${breakpoints.lg})`} />
+  <source srcset={imgT} media={`(min-width: ${breakpoints.md})`} />
+  <Image
+    class="w-full min-h-[300px] md:max-h-[600px] object-cover object-center"
+    src={imgM}
+    alt="alt text"
+  />
+</picture> -->

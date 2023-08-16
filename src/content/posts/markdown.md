@@ -1,6 +1,6 @@
 ---
-layout: src/layouts/main/LayoutBlogPost.astro
-title: 'Markdown'
+layout: src/layouts/LayoutBlogPost.astro
+title: 'Markdown Reference'
 pubDate: 1985-11-09
 description: 'Markdown reference'
 author: 'Scott Greske'

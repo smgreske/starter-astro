@@ -1,5 +1,5 @@
 ---
-layout: src/layouts/main/LayoutBlogPost.astro
+layout: src/layouts/LayoutBlogPost.astro
 title: My Second Blog Post
 author: Astro Learner
 description: "After learning some Astro, I couldn't stop!"

@@ -6,6 +6,7 @@
       "assets/*": ["src/assets/*"],
       "components/*":["src/components/*"],
       "content/*":["src/content/*"],
+      "css/*": ["src/css/*"],
       "layouts/*":["src/layouts/*"],
       "_test-page/*": ["src/_test-page/*"],
       "layout-components/*":["src/components/layout-components/*"],

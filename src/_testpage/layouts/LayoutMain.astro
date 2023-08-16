@@ -1,0 +1,61 @@
+---
+import 'css/global.css'
+import NavFooter from './NavFooter.astro'
+import NavToggle from "./NavToggle.astro";
+import NavSocial from './NavSocial.astro';
+import NavHeader from './NavHeader.astro';
+import LogoHeader from './LogoHeader.astro';
+import LogoFooter from './LogoFooter.astro';
+
+interface Props {
+  pageTitle: string;
+}
+
+const { pageTitle } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html data-project='main' data-theme='dark' class='scroll-smooth' lang="en">
+  
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+
+  <body class='GradientOne'>
+
+    <header class='DefaultMargins | bg-black/50 py-8 shadow-lg'>
+      <div class='MaxCenter FlexBetween'> 
+        <LogoHeader/>
+        <NavToggle >
+          <NavHeader />
+        </NavToggle> 
+      </div>
+    </header>
+
+    <main class="DefaultMargins py-20">
+      <div class= 'MaxCenter relative'>
+        <slot/>
+      </div>
+    </main>
+
+    <footer class="DefaultMargins bg-black/50 py-4 ">
+      <div class="FlexBetween MaxCenter">
+        <LogoFooter/>
+        <NavSocial/>
+        <NavToggle >
+          <NavFooter />
+        </NavToggle>   
+      </div>
+    </footer>
+
+  </body>
+
+</html>

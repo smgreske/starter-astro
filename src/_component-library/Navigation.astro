@@ -1,0 +1,19 @@
+---
+import { Icon } from 'astro-icon'
+
+const linkArray = [
+  { name: "One", path: "/" },
+  { name: "Two", path: "/" }, 
+];
+---
+
+<nav class="flex items-center gap-XXXXX sm:flex-col sm:gap-16">
+
+  {linkArray.map((current) => (
+    <a href={current.path} class="hover:text-clr-hover"  >
+      {current.name}
+    </a>
+  ))}
+
+</nav>
+

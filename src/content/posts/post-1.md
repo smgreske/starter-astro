@@ -1,5 +1,5 @@
 ---
-layout: src/layouts/main/LayoutBlogPost.astro
+layout: src/layouts/LayoutBlogPost.astro
 title: 'My Blog Post'
 pubDate: 2022-07-01
 description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, animi.'

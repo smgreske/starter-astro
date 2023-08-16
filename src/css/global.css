@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  html {
+    --breakpointTablet: 650px;
+    --breakpointDesktop: 1000px;
+
+    --marginMobile: 1rem;
+    --marginTablet: 2rem;
+    --marginDesktop: 4rem;
+    --maxWidth: 1110px;
+
+    --fontPrimary:'XXXXX';
+    --fontSecondary:'XXXXX';
+
+    --clrThemeone: #XXXXX;
+    --clrThemetwo: #XXXXX;
+    --clrThemethree: #XXXXX;
+  }
+
+  html[data-theme='one'] {
+    --clrDefault: #XXXXX;
+    --clrBackground: #XXXXX;
+    --clrOverlay: 0 0 0;
+    --clrHover: #XXXXX;
+    --clr1: #XXXXX;
+    --clr2: #XXXXX;
+    --clr3: #XXXXX;
+    --clr4: #XXXXX;
+    --clr5: #XXXXX;
+
+  }
+
+  html[data-theme='two'] {
+    --clrDefault: rgb(31, 40, 107);
+    --clrBackground: #e5b3dc;
+    --clrOverlay: 255 255 255;
+    --clrHover: #e5b3dc;
+    --clr1: white;
+  }
+
+  html[data-theme='three'] {
+    --clrDefault: white;
+    --clrBackground: #a690ff;
+    --clrOverlay: 255 255 255;
+    --clrHover: #a690ff;
+    --clr1: white;
+  }
+
+  /* Base Styles */
+  *, ::before, ::after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: var(--clrDefault);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--clrBackground);
+    color: var(--clrDefault);
+    font-family: var(--fontPrimary);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button, [role='button'] {
+    cursor: pointer;
+  }
+  :disabled {
+    cursor: none;
+  }
+
+  fieldset {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: var(--fontSecondary);
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+
+  svg {
+    fill: var(--clrDefault); 
+  }
+
+  video {
+    height: auto;
+    width: 100%;
+  }
+
+  [hidden] {
+    display: none;
+  }
+  /* img {@apply w-full h-auto} */
+  /* ol, ul, menu {@apply list-none m-0 p-0} */
+
+  /* Markdown Styles */
+  
+  [data-type='markdown'] > h1 {@apply text-32 }
+  [data-type='markdown'] > h3 {@apply text-24 }
+}
+
+
+@layer components { 
+
+/* position */
+  .AbsoluteCenter {@apply absolute left-1/2 -translate-x-1/2}
+  .AbsoluteFull {@apply absolute w-full}
+  .FixedFull {@apply fixed w-full}
+
+/* layout */
+  .FlexBetween {@apply flex justify-between items-center}
+  .FlexCenter {@apply flex justify-center items-center}
+  .GridBasic {@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3}
+  
+/* spacing */
+  .ResponsiveMargins {@apply px-mobile md:px-tablet lg:px-desktop}
+  .MaxCenter {@apply max-w-maxx m-auto}
+
+/* components */
+  .CardOne {@apply bg-clr-over text-clr-2 w-fit m-auto rounded-lg shadow-xl border-t-1 border-t-clr-1 border-l-1 border-l-clr-1}
+  .GradientOne {@apply bg-gradient-to-l from-clr-bg to-clr-3 from-70%}
+}

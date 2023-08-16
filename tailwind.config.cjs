@@ -28,6 +28,8 @@ module.exports = {
         clr: {
           default:'var(--clrDefault)',
           bg:'var(--clrBackground)',
+          over: 'rgb(var(--clrOverlay) / .3)',
+          hover: 'var(--clrHover)',
           1:'var(--clr1)',
           2:'var(--clr2)',
           3:'var(--clr3)',
@@ -36,8 +38,8 @@ module.exports = {
         }
       },
       fontFamily: {
-        'primary': ['Poppins'],
-        'secondary': ['"Space Grotesk"'],
+        'primary': ['var(--fontPrimary)'],
+        'secondary': ['var(--fontSecondary)'],
       },
       
       screens: {
